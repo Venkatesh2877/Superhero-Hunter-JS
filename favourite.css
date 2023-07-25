@@ -1,6 +1,26 @@
 *{
     background-color: black;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    border-bottom: 2px dotted #94051a;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#home{
+    background-color: #94051a;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    padding: 5px;
+    text-align: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 li{
@@ -25,3 +45,16 @@ li img{
     border: #94051a dotted 5px;
     border-radius: 50%;
 }
+
+
+.beFlex{
+    display: flex; 
+    justify-content: space-between;
+    margin: 10px;;
+}
+.name{
+    font-size: 2rem;
+    margin-left: 10px;
+    padding: auto;
+}
+

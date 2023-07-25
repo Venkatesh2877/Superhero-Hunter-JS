@@ -5,8 +5,13 @@ const ts=Date.now();
 const publicKey="5381782feb81c47bcae5333cd94b20e3";
 const privateKey="92e40628c8cbef656d21321968a2f6612f799311";
 const hash=(CryptoJS.MD5(ts+privateKey+publicKey).toString());
-
 var fav=[];
+
+if(localStorage.length>0){
+    let retString = localStorage.getItem("key");
+    fav = JSON.parse(retString);
+}
+
 
 function clearSearchList(){
     searchListContainerlistContainer.innerHTML='';
@@ -74,7 +79,7 @@ function renderHomepage(element){
     <div class="beFlex">
     <img src="${element.thumbnail.path+'.'+element.thumbnail.extension}" alt="image">
         <div class="name" id="${element.id}">${element.name}</div>
-        <i class="fa-solid fa-star fa-sm" id="${element.id}" style="color: #94051a; margin-top: 18px; margin-right: 20px;"></i>
+        <i class="fa-solid fa-star fa-2xl" id="${element.id}" style="color: #94051a; margin-top: 18px; margin-right: 20px;"></i>
     </div>
     `;
  // li.setAttribute("class", "beFlex";
@@ -95,7 +100,7 @@ function handleClick(e){
         //fetchSuperHeroDetails(target.id);
 
 
-    }else if(target.className=='fa-solid fa-star fa-sm'){
+    }else if(target.className=='fa-solid fa-star fa-2xl'){
         if(!fav.includes(target.id)){
             fav.push(target.id);
            target.style.color='#d1b733';

@@ -2,6 +2,9 @@ const ts=Date.now();
 const publicKey="5381782feb81c47bcae5333cd94b20e3";
 const privateKey="92e40628c8cbef656d21321968a2f6612f799311";
 const hash=(CryptoJS.MD5(ts+privateKey+publicKey).toString());
+let retString = localStorage.getItem("key");
+let fav = JSON.parse(retString);
+
 
 const superheroPhoto= document.getElementById('photo');
 const superheroDescription=document.getElementById('description');
@@ -10,6 +13,8 @@ const superheroEvents=document.getElementById('events');
 const superheroSeries=document.getElementById('series');
 const superheroStories=document.getElementById('stories');
 const superheroName=document.getElementById('name');
+const i=document.getElementsByTagName('i');
+
 
 //get the id of the superhero
 let paramString=window.location.search;
@@ -32,7 +37,6 @@ async function fetchSuperHeroDetails(){
 }
 
 function renderSuperHeroPage(data){
-    console.log(data[0]);
     const img=data[0].thumbnail.path+"."+data[0].thumbnail.extension;
     var div = document.createElement("div");
     div.innerHTML=`
@@ -41,6 +45,14 @@ function renderSuperHeroPage(data){
     `;
     div.setAttribute("class", "photo");
     superheroPhoto.appendChild(div);
+
+    i[0].id= data[0].id;
+
+    if(fav.includes(String(data[0].id))){
+        i[0].style.color='#d1b733';
+    }else{
+        i[0].style.color='#94051a';
+    }
 
     superheroDescription.innerHTML=data[0].description;//add description to html
     superheroName.innerHTML=data[0].name;// add name to html
@@ -66,12 +78,7 @@ function renderSuperHeroPage(data){
     const storiesList= data[0].stories.items.map(element=>element.name);
     const addStoriesList= addToString(storiesList);
     superheroStories.innerHTML= addStoriesList;
-//    console.log(comicsList);
-//    console.log(addComicsList);
 
-    // superheroComics.innerHTML=data[0].description
-    // superheroDescription.innerHTML=data[0].description
-    // superheroDescription.innerHTML=data[0].description
 }
 
 //function to add comics list to 
@@ -82,5 +89,37 @@ function addToString(List){
     }
    return string;
 }
+function handleClick(e){
+    let target= e.target;
+    console.log(target.id);
+    if(target.id=='home'){
+        var string = JSON.stringify(fav);
+        localStorage.setItem("key", string);
+        window.location.href="home.html";
 
+    }else if(target.id=='favourite'){
+        var string = JSON.stringify(fav);
+        localStorage.setItem("key", string);
+        window.location.href="favourite.html";
+
+    }else if(target.className=='fa-solid fa-star'){
+        console.log(fav.includes(target.id));
+        if(!fav.includes(target.id)){
+            fav.push(target.id);
+           target.style.color='#d1b733';
+           console.log(fav);
+            return;  
+        }else{
+            var newFav=fav.filter((id)=>{
+                return id!=target.id;
+            });
+            fav=newFav;
+            target.style.color='#94051a';
+            console.log(fav);
+        
+        }
+    }
+}
+
+document.addEventListener('click', handleClick);
 
