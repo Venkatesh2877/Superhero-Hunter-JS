@@ -53,7 +53,7 @@ function renderSearchSuggestions(element){
     div.classList.add('autocomplete-items');
     let word = data.substr(0, searchBox.value.length);
     word += data.substr(searchBox.value.length);
-
+    console.log('hello');
     let color='#94051a';
     if(fav.includes(String(element.id))){
         color = '#d1b733';
