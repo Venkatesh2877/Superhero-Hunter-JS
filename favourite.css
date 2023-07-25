@@ -46,12 +46,12 @@ li img{
     border-radius: 50%;
 }
 
-
 .beFlex{
     display: flex; 
     justify-content: space-between;
     margin: 10px;;
 }
+
 .name{
     font-size: 2rem;
     margin-left: 10px;
