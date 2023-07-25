@@ -87,8 +87,6 @@ async function loadHomePage(){
 
 //to render the home page with all the images
 function renderHomepage(element){
-    console.log(fav.includes(String(element.id)));
-
     let color='#94051a';
     if(fav.includes(String(element.id))){
         color = '#d1b733';
