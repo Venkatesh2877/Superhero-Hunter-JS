@@ -30,7 +30,7 @@ async function search(){
 
     try{
         clearSearchList();
-        if(data.length<4){ //>4 make the filter easy
+        if(data.length<2){ //>4 make the filter easy
             return;
         }
         const url=`https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&nameStartsWith=${data}`;
@@ -58,6 +58,7 @@ function renderSearchSuggestions(element){
     if(fav.includes(String(element.id))){
         color = '#d1b733';
     }
+
     div.innerHTML = `
         <div class="item-container">
             <p class="item" id="${element.id}">${word}</p>
@@ -96,7 +97,7 @@ function renderHomepage(element){
     const img=element.thumbnail.path+"."+element.thumbnail.extension;
     var li = document.createElement("li");
     li.innerHTML=` 
-        <div class="beFlex">
+        <div class="beFlex list">
         <img src="${element.thumbnail.path+'.'+element.thumbnail.extension}" alt="image">
             <div class="name" id="${element.id}">${element.name}</div>
             <i class="fa-solid fa-star fa-sm" id="${element.id}" style="color: ${color}; margin-top: 18px; margin-right: 20px;"></i>

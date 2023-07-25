@@ -64,6 +64,7 @@ function renderFavpage(element){
 //handle click events
 function handleClick(e){
     let target= e.target;
+    console.log(target.className);
     if(target.className=='fa-solid fa-star fa-xl'){ //remove the hero when the star is clicked
         var newFav=fav.filter((id)=>{
             return id!=target.id;

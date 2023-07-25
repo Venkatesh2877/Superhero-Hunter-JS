@@ -7,7 +7,7 @@
 h1{
     text-align: center;
     border-bottom: 2px dotted #94051a;
-    width: 400px;
+    width: 350px;
     margin: auto;
     margin-bottom: 30px;
 }
@@ -21,6 +21,7 @@ h1{
     text-align: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    cursor: pointer;
 }
 
 li{
@@ -37,6 +38,7 @@ li{
 li:hover{
     transform: scale(1.1);
     box-shadow: 2px 2px 2px 2px #94051a;
+    cursor: pointer;
 }
 
 li img{
@@ -56,5 +58,6 @@ li img{
     font-size: 2rem;
     margin-left: 10px;
     padding: auto;
+    width: 75%;
 }
 

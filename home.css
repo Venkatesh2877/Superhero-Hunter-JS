@@ -30,11 +30,13 @@ h1{
 #favourite:hover{
     transform: scale(1.1);
     box-shadow: 1px 1px 1px 1px #94051a;
+    cursor: pointer;
 }
 
 #search-bar{
     width: 20rem;
     margin: auto;
+    cursor: pointer;
 }
 
 input{
@@ -68,6 +70,7 @@ i{
 .item-container:hover{
     transform: scale(1.1);
     box-shadow: 2px 2px 2px 2px #94051a;
+    cursor: pointer;
 }
 
 .item{
@@ -92,6 +95,7 @@ li{
 li:hover{
     transform: scale(1.1);
     box-shadow: 2px 2px 2px 2px #94051a;
+    cursor: pointer;
 }
 
 li img{
@@ -115,6 +119,7 @@ li img{
     font-size: 2rem;
     margin-left: 10px;
     padding: auto;
+    width: 75%;
 }
 
 .description{
