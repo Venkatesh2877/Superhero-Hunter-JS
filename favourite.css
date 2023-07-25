@@ -1,0 +1,27 @@
+*{
+    background-color: black;
+    color: white;
+}
+
+li{
+    list-style: none;
+    border: #94051a solid 2px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    transition: ease-in .2s;
+    padding: 10px;
+    border-radius: 60px;
+}
+
+li:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 2px 2px #94051a;
+}
+
+li img{
+    width: 5rem;
+    height: 5rem;
+    border: #94051a dotted 5px;
+    border-radius: 50%;
+}

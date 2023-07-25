@@ -1,0 +1,47 @@
+*{
+    background-color: black;
+    color:  white;
+}
+
+#Superhero_detail{
+    width: 80%;
+    margin: auto;
+    height: 300px;
+}
+
+#photo{
+    text-align: center;
+}
+
+#photo img{
+    width: 50%;
+    border: #94051a solid 2px;
+    border-radius: 50px;
+    transition: ease-in .5s;
+}
+
+#photo img:hover{
+    transform: rotateX(360deg);
+}
+
+#name{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.commonHeadingFeatures{
+    margin-top: 10px;
+    border: #94051a solid 2px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.informationList{
+    font-size: 1rem;
+    margin: 10px;
+    padding: 10px;
+}
